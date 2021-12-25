@@ -1,5 +1,7 @@
 package lab_1;
 
+import java.util.regex.Pattern;
+
 class Person {
     private String name; // имя
     private String phoneNumber; // номер телефона
@@ -33,27 +35,7 @@ class Person {
 
     // метод проверки номера телефона
     public boolean checkPhone() {
-        // если номер начинается с 8 и его длина не 11 символов
-        if (phoneNumber.charAt(0) == '8') {
-            if (phoneNumber.length() != 11)
-                return false;
-        }
-        // если номер начинается с +7 и его длина не 12 символов
-        else if (phoneNumber.substring(0,2).equals("+7")) {
-            if(phoneNumber.length() != 12)
-                return false;
-        }
-        // если номер начинается некорректно
-        else return false;
-
-        // если в номере присутствует что-то кроме цифр (не считая начала)
-        try {
-            long longValue = Long.parseLong(phoneNumber.substring(1));
-        }
-        catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
+        return phoneNumber.matches("(\\+7|8)-\\d{3}-\\d{7}");
     }
 
     // метод вывода информации

@@ -14,7 +14,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.print("~New person:\nEnter the name: ");
         name = in.nextLine();
-        System.out.print("Enter the phone number: ");
+        System.out.print("Enter the phone number (+7/8-XXX-XXXXXXX): ");
         phoneNumber = in.nextLine();
         p2 = Person.create(name, phoneNumber);
         while (!p2.checkPhone()) {
