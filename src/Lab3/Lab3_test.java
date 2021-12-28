@@ -2,8 +2,6 @@ package Lab3;
 
 import java.util.Scanner;
 
-import static Lab3.Currency.USD;
-
 public class Lab3_test {
     public static void testEx1() {
 
