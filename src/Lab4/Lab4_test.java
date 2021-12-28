@@ -1,7 +1,6 @@
 package Lab4;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class Lab4_test {
     private static float division(float divisible, float divider) throws Exception {
@@ -43,13 +42,53 @@ public class Lab4_test {
         }
     }
 
-    private static void ex3(File f1, File f2) {
+    private static void ex3(File f1, File f2) throws IOException {
+        FileInputStream fin;
+        FileOutputStream fout;
+        StringBuilder f1str= new StringBuilder();
+        StringBuilder f2str = new StringBuilder();
+        int in;
 
+        fin = new FileInputStream(f1);
+        int offset = 0;
+        while((in = fin.read()) != -1) {
+            if((char)in == '\n') {
+                f1str.insert(f1str.length(),(char)in);
+                offset = f1str.length();
+                continue;
+            }
+            f1str.insert(offset,(char)in);
+        }
+        fin.close();
+
+        fin = new FileInputStream(f2);
+        offset = 0;
+        while((in = fin.read()) != -1) {
+            if((char)in == '\n') {
+                f2str.insert(f2str.length(),(char)in);
+                offset = f2str.length();
+                continue;
+            }
+            f2str.insert(offset,(char)in);
+        }
+        fin.close();
+
+        fout = new FileOutputStream(f2);
+        fout.write(f1str.toString().getBytes());
+        fout.close();
+
+        fout = new FileOutputStream(f1);
+        fout.write(f2str.toString().getBytes());
+        fout.close();
     }
 
     public static void testEx3() {
         File f1 = new File(System.getProperty("user.dir") + "\\lab4file1.txt");
         File f2 = new File(System.getProperty("user.dir") + "\\lab4file2.txt");
-        ex3(f1,f2);
+        try {
+            ex3(f1,f2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
