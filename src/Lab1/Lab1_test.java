@@ -1,9 +1,9 @@
-package lab_1;
+package Lab1;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Lab1_test {
+    public static void test() {
         Person p1 = new Person("Dmitry", "+79103553948");
         System.out.println("~Initial person:");
         p1.showInfo();

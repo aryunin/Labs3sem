@@ -1,6 +1,4 @@
-package lab_1;
-
-import java.util.regex.Pattern;
+package Lab1;
 
 class Person {
     private String name; // имя
