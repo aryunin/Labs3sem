@@ -1,9 +1,9 @@
 package com.artemiiik;
 
-import Lab4.Lab4_test;
+import Lab5.Lab5_test;
 
 public class Main {
     public static void main(String[] args) {
-        Lab4_test.testEx3();
+        Lab5_test.test();
     }
 }
