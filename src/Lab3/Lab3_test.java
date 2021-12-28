@@ -4,7 +4,16 @@ import java.util.Scanner;
 
 public class Lab3_test {
     public static void testEx1() {
+        Student s1 = new Student("Артем");
+        Student s2 = new Student("Гоша", "НГТУ им. Р.Е.Алексеева");
+        Student s3 = new Student("Ева", "ВШЭ", 19);
 
+        s1.showInfo();
+        System.out.println();
+        s2.showInfo();
+        System.out.println();
+        s3.showInfo();
+        System.out.println();
     }
 
     public static void testEx2() {
