@@ -8,7 +8,17 @@ public class Lab3_test {
     }
 
     public static void testEx2() {
+        System.out.print("Int overloading: ");
+        Dog.bark(1);
+        System.out.println();
 
+        System.out.print("Float overloading: ");
+        Dog.bark(1f);
+        System.out.println();
+
+        System.out.print("Boolean overloading: ");
+        Dog.bark(true);
+        System.out.println();
     }
 
     private static void ex3() {
